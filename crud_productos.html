@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor de Productos y Descuentos</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+        <div id=" header">
+            <div class="nav"
+                style="background-color: #97DBAE; height: max-content; display: flex; justify-content: space-between;">
+                <div class="" style="justify-content: flex-start; display: flex; align-items: center;">
+                    <div>
+                        <a href="login.html" style="color:black;font-weight: bold; "><img
+                                src="images/icons8_login_25px.png" alt="" style="text-decoration: none; ">Iniciar
+                            Sesion</a>
+                    </div>
+                </div>
+                <div class="" style="justify-content: flex-end; display: flex; align-items: center;">
+                    <a href="carro.html"><img src="images/icons8_shopping_basket_25px.png" alt=""></a>
+                </div>
+            </div>
+
+
+            <div class="header2_desktop" style="background-color: aliceblue;">
+                <div class="img_principal" style="display: flex; justify-content: center;">
+                    <img src="images/Ilustración.png" title="" alt="" style="width: 180px; height: auto;">
+                </div>
+                <div class="menu" style="display: flex; justify-content: center; padding-bottom: 5px;">
+                    <button class="btn btn-light" style="text-decoration: none; font-weight: bold;"><a href="index.html"
+                            style="color: blueviolet;text-decoration: none;font-family: 'Abril Fatface', cursive;font-size: 1.3em;">Inicio
+                        </a></button>
+                    <button class="btn btn-light" style="text-decoration: none; font-weight: bold;"><a
+                            href="historial_compras.html "
+                            style="color: blueviolet;text-decoration: none;font-family: 'Abril Fatface', cursive;font-size: 1.3em;">Mis
+                            Compras </a></button>
+                    <button class="btn btn-light" style="text-decoration: none; font-weight: bold;"><a
+                            href="#suscribirse"
+                            style="color: blueviolet;text-decoration: none;font-family: 'Abril Fatface', cursive;font-size: 1.3em;">Suscribirse
+                        </a></button>
+                    <button class="btn btn-light" style="text-decoration: none; font-weight: bold;"><a
+                            href="crud_productos.html"
+                            style="color: blueviolet;text-decoration: none;font-family: 'Abril Fatface', cursive;font-size: 1.3em;">Productos
+                            y Descuentos</a></button>
+                </div>
+            </div>
+            <div class="header2_mobile" style="background-color: aliceblue;">
+                <div class="img_principal" style="display: flex; justify-content: center;">
+                    <img src="images/Ilustración.png" title="" alt="" style="width: 180px; height: auto;">
+                </div>
+                <div class="more" style="display: flex; justify-content: center;">
+                    <button class="btn btn-light" id="bMore"><span class="material-icons" style=" color: blueviolet; font-size: 50px;">
+                        expand_more
+                        </span></button>
+                </div>
+                </div>
+                <div id="links" class="links collapsed">
+                    <div id="menu_mobile" style="display: flex; justify-content: center; padding-bottom: 5px; flex-direction: column;">
+                        <button class="btn btn-light" style="text-decoration: none; font-weight: bold;"><a href="index.html"
+                                style="color: blueviolet;text-decoration: none;font-family: 'Abril Fatface', cursive;font-size: 1.3em;">Inicio
+                            </a></button>
+                        <button class="btn btn-light" style="text-decoration: none; font-weight: bold;"><a
+                                href="historial_compras.html "
+                                style="color: blueviolet;text-decoration: none;font-family: 'Abril Fatface', cursive;font-size: 1.3em;">Mis
+                                Compras </a></button>
+                        <button class="btn btn-light" style="text-decoration: none; font-weight: bold;"><a
+                                href="#suscribirse"
+                                style="color: blueviolet;text-decoration: none;font-family: 'Abril Fatface', cursive;font-size: 1.3em;">Suscribirse
+                            </a></button>
+                        <button class="btn btn-light" style="text-decoration: none; font-weight: bold;"><a
+                                href="crud_productos.html"
+                                style="color: blueviolet;text-decoration: none;font-family: 'Abril Fatface', cursive;font-size: 1.3em;">Productos
+                                y Descuentos</a></button>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <div id="tabla1">
+    <div style="display: flex;justify-content: center; margin-top: 50px;">
+        <div
+            style="background-color: #97DBAE; border-radius: 40px 40px 40px 40px;-moz-border-radius: 40px 40px 40px 40px; -webkit-border-radius: 40px 40px 40px 40px;border: 10px solid #97DBAE;">
+            <h1 class="" style=" color:#8a2be2; font-family: 'Abril Fatface', cursive;">Agrega, Edita o Elimina un
+                Producto</h1>
+        </div>
+    </div>
+    <form id="crud_producto" action="" style="display: flex; justify-content: space-evenly; margin-top: 60px; margin-bottom: 30px;">
+        <input id="inp1" type="number" name="id_producto" id="id_producto" placeholder="ID Producto">
+        <input id="inp1" type="text" placeholder="Nombre Producto">
+        <input id="inp1" type="number" name="cant_stock" id="cant_stock" placeholder="Stock">
+        <input id="inp1" type="number" name="precio" id="precio_producto" placeholder="Precio">
+        <input id="inp1" type="file" name="image_producto" id="upload_producto"  accept="image/png, image/jpeg">
+
+    </form>
+    <div id="botones" style="display: flex; justify-content: space-evenly;align-items: center;">
+        <button class="btn btn-success" style=" margin-bottom: 20px;"> Guardar </button>
+        <button class="btn btn-danger" style=" margin-bottom: 20px;"> Eliminar </button>
+        <button class="btn btn-primary" style=" margin-bottom: 20px;"> Actualizar </button>
+
+    </div>
+    <div id="tabla_productos" style="display: flex; justify-content: center;">
+        <div class="divTable blueTable" style="width: 100%;">
+            <div class="divTableHeading">
+                <div class="divTableRow">
+                    <div class="divTableHead" id="nro_fila">Nro Fila</div>
+                    <div class="divTableHead">ID Producto</div>
+                    <div class="divTableHead">Nombre Producto</div>
+                    <div class="divTableHead">Stock</div>
+                    <div class="divTableHead">Precio</div>
+                    <div class="divTableHead" id="img_tabla">Imagen Referencial</div>
+                </div>
+            </div>
+            <div class="divTableBody">
+                <div class="divTableRow">
+                    <div class="divTableCell"id="nro_fila">1</div>
+                    <div class="divTableCell">100</div>
+                    <div class="divTableCell">Alyssum Maritimum</div>
+                    <div class="divTableCell">35</div>
+                    <div class="divTableCell">$650</div>
+                    <div class="divTableCell"id="img_tabla"><img src="images/alyssum.jpg" alt="" style="width: 100px; height: auto;">
+                    </div>
+                </div>
+                <div class="divTableRow">
+                    <div class="divTableCell" id="nro_fila">2</div>
+                    <div class="divTableCell">110</div>
+                    <div class="divTableCell">Aquilegia hybrida</div>
+                    <div class="divTableCell">41</div>
+                    <div class="divTableCell">$2400</div>
+                    <div class="divTableCell" id="img_tabla"><img src="images/aquilegia.jpg" alt=""
+                            style="width: 100px; height: auto;"></div>
+                </div>
+                <div class="divTableRow">
+                    <div class="divTableCell" id="nro_fila">3</div>
+                    <div class="divTableCell">120</div>
+                    <div class="divTableCell">Aster Alpinus</div>
+                    <div class="divTableCell">0</div>
+                    <div class="divTableCell">$1900</div>
+                    <div class="divTableCell" id="img_tabla"><img src="images/aster.jpg" alt="" style="width: 100px; height: auto;">
+                    </div>
+                </div>
+                <div class="divTableRow">
+                    <div class="divTableCell" id="nro_fila" >4</div>
+                    <div class="divTableCell">130</div>
+                    <div class="divTableCell">Sutera Cordata</div>
+                    <div class="divTableCell">3</div>
+                    <div class="divTableCell">$5000</div>
+                    <div class="divTableCell"  id="img_tabla"><img src="images/sutera.jpg" alt="" style="width: 100px; height: auto;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="tabla2" style="margin-bottom: 100px;">
+        <div id="crud_descuento" style="display: flex;justify-content: center; margin-top: 50px;">
+            <div
+                style="background-color: #97DBAE; border-radius: 40px 40px 40px 40px;-moz-border-radius: 40px 40px 40px 40px; -webkit-border-radius: 40px 40px 40px 40px;border: 10px solid #97DBAE;">
+                <h1 class="" style=" color:#8a2be2; font-family: 'Abril Fatface', cursive;">Agrega, Edita o Elimina una promoción o descuento</h1>
+            </div>
+        </div>
+        <form id="crud_producto" action="" style="display: flex; justify-content: space-evenly; margin-top: 60px; margin-bottom: 30px;">
+            <input id="inp1" type="number" name="id_producto" id="id_producto" placeholder="ID promoción">
+            <input id="inp1" type="text" placeholder="Nombre promoción" >
+            <input id="inp1" type="number" name="cant_stock" id="cant_stock" placeholder="porcentaje" >
+            <input id="inp1" type="date" name="precio" id="precio_producto" placeholder="fecha" >
+
+        </form>
+        <div id="botones" style="display: flex; justify-content: space-evenly;align-items: center;">
+            <button class="btn btn-success" style=" margin-bottom: 20px;"> Guardar </button>
+            <button class="btn btn-danger" style=" margin-bottom: 20px;"> Eliminar </button>
+            <button class="btn btn-primary" style=" margin-bottom: 20px;"> Actualizar </button>
+
+        </div>
+        <div id="tabla_productos" style="display: flex; justify-content: center;">
+            <div class="divTable blueTable" style="width: 100%;">
+                <div class="divTableHeading">
+                    <div class="divTableRow">
+                        <div class="divTableHead" id="nro_fila" >Nro Fila</div>
+                        <div class="divTableHead">ID Descuento</div>
+                        <div class="divTableHead">Nombre Descuento</div>
+                        <div class="divTableHead">Porcentaje</div>
+                        <div class="divTableHead">Fecha de Inicio</div>
+                        <div class="divTableHead">Fecha de Termino</div>
+                    </div>
+                </div>
+                <div class="divTableBody">
+                    <div class="divTableRow">
+                        <div class="divTableCell" id="nro_fila" >1</div>
+                        <div class="divTableCell">0001</div>
+                        <div class="divTableCell">Dia de los Inocentes</div>
+                        <div class="divTableCell">1</div>
+                        <div class="divTableCell">01/04/2022</div>
+                        <div class="divTableCell">01/04/2022</div>
+                    </div>
+                    <div class="divTableRow">
+                        <div class="divTableCell" id="nro_fila" >0002</div>
+                        <div class="divTableCell">110</div>
+                        <div class="divTableCell">Dia de las madres</div>
+                        <div class="divTableCell">20</div>
+                        <div class="divTableCell">08/05/2022</div>
+                        <div class="divTableCell">10/05/2022</div>
+                    </div>
+                    <div class="divTableRow">
+                        <div class="divTableCell" id="nro_fila" >0003</div>
+                        <div class="divTableCell">120</div>
+                        <div class="divTableCell">Dia de la Madre Tierra</div>
+                        <div class="divTableCell">15</div>
+                        <div class="divTableCell">22/04/2022</div>
+                        <div class="divTableCell">22/04/2022</div>
+                    </div>
+                    <div class="divTableRow">
+                        <div class="divTableCell" id="nro_fila" >0004</div>
+                        <div class="divTableCell">130</div>
+                        <div class="divTableCell">Descuento Suscriptor</div>
+                        <div class="divTableCell">5</div>
+                        <div class="divTableCell">---------</div>
+                        <div class="divTableCell">---------</div>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </div>
+    <div id="suscribirse"
+            style="background-color: #F1E1A6;height: 150px; align-items: center; justify-content: center;">
+            <br>
+            <div id="texto_sub" class="text-center"
+                style="font-family: 'Abril Fatface';font-size: 1.1em; margin-left: 10px;">
+                ¡Suscribete a nuestra pagina web para recibir nueva Información y obtener un 5% de descuento en tus
+                siguientes compras!</div>
+            <br>
+            <div id="mail" class="text-center" style=" align-items: center; display: flex; justify-content: center;">
+                <input type="text" placeholder="Ingresa tu correo electronico" style="height: 40px; width: 300px;border-radius: 10px 10px 10px 10px;
+                -moz-border-radius: 10px 10px 10px 10px;
+                -webkit-border-radius: 10px 10px 10px 10px;
+                border: 0px solid #000000;"><button class="btn btn-outline-success text-center" style="border-radius: 10px 10px 10px 10px;
+                    -moz-border-radius: 10px 10px 10px 10px;
+                    -webkit-border-radius: 10px 10px 10px 10px;
+                    border: 1px solid green">Suscribirse</button>
+            </div>
+        </div>
+
+        <div class="" id="pie"
+            style="display: flex; align-items: center; background-color: #97DBAE; height: 25rem; justify-content: space-between;">
+            <div id="img" class="col">
+                <img id="img_foot" src="images/Ilustración.png" title="" alt="" style="width: 20rem;">
+            </div>
+            <div id="legal" class="" style="padding-right: 100px;">
+                <h6>Legal</h6>
+                <ul>
+                    <li>Políticas de reembolso</li>
+                    <li>Políticas de envíos</li>
+                    <li>Términos de servicio</li>
+                </ul>
+            </div>
+            <div id="legal" class="" style="padding-right: 100px;">
+                <h6>Información</h6>
+                <ul>
+                    <li>Contáctanos</li>
+                    <li>Preguntas Frecuentes</li>
+                    <li>Nuestra Historia</li>
+                </ul>
+            </div>
+        </div>
+        <div id="foot"
+            style=" border-style: solid; border-color: white; border-bottom: white; border-left: white; border-right:white ;background-color: #97DBAE; ">
+            <p class="text-muted text-center">© 2022 Vivero bubalú. Todos los derechos reservados. Diseñado por
+                JR.ltda</p>
+            </div>
+    <script>
+        const bMore = document.querySelector("#bMore");
+        const links = document.querySelector('#links');
+        bMore.addEventListener("click", (e) => {
+            links.classList.toggle('collapsed');
+        });
+    </script>
+</body>
+
+</html>
