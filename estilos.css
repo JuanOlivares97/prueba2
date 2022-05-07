@@ -190,8 +190,9 @@ div.blueTable {
     margin: 5px;
     padding: 5px;
   }
-
-
-
-
+  #img_slide{
+    width: 375px;
+    height: 200px !important;
   }
+  }
+  

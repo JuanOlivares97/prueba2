@@ -122,3 +122,45 @@ code {
   color: #e4cb58;
   font: inherit;
 }
+#producto{
+  display: flex;
+  justify-content: center;
+  margin: 5px;
+}
+#contenedor_info{
+  width: 100%!important;
+}
+
+
+@media screen and (max-width: 770px){
+ #contenedor_carro{
+   display: flex !important;
+   flex-direction: column-reverse;
+ }
+ #contenedor_info{
+   justify-content: center !important;
+ }
+ #info_carro{
+   justify-content: center;
+   width: 100%!important;
+ }
+ #producto{
+   display: flex !important;
+
+ }
+ #lista_productos{
+   display: flex !important;
+   justify-content: space-between !important;
+   flex-direction: column;
+ }
+ 
+}
+@media screen and (max-width:400px) {
+  #nombre_producto{
+    font-size: 15px !important;
+  }
+  #img_carro{
+    width: 50px;
+  }
+  
+}
