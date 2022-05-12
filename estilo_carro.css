@@ -132,10 +132,10 @@ code {
 }
 
 
-@media screen and (max-width: 770px){
+@media screen and (max-width: 900px){
  #contenedor_carro{
    display: flex !important;
-   flex-direction: column-reverse;
+   flex-direction: column-reverse !important;
  }
  #contenedor_info{
    justify-content: center !important;
@@ -155,7 +155,7 @@ code {
  }
  
 }
-@media screen and (max-width:400px) {
+@media screen and (max-width:500px) {
   #nombre_producto{
     font-size: 15px !important;
   }
