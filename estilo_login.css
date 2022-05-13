@@ -402,3 +402,8 @@ body {
       padding-bottom: 20px;
     }
   }
+
+form .error {
+  color: #df1d09;
+  border: none;
+}

@@ -6,6 +6,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrate</title>
     <link rel="stylesheet" href="estilo_registro.css">
+
+    <!--Incluir la librería jQuery-->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <!--Incluir el plugin jQuery Validate-->
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+    
+    <script>
+
+
+        $().ready(function() {
+            $("#form3").validate({
+                rules: {
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    password1: {
+                        required: true,
+                        minlength: 8
+                    }, 
+                    password2: {
+                      equalTo: '#password1'
+                    },
+                    nombre: {
+                        required: true,
+                        minlength: 3
+                    },
+                    apellidos: {
+                        required: true,
+                        minlength: 4
+                    }
+                    
+                },
+                messages: {
+                    
+                    email: "Debes ingresar un email valido",
+                    password1: {
+                        required: "Debes escribir una contraseña",
+                        minlength: "Tu contraseña debe tener al menos 8 carácteres"
+                    },
+                    password2: {
+                      required: "Debes volver a escribir tu contraseña",
+                      equalTo: "Las contraseñas deben coincidir"
+
+                    },
+                    name: {
+                        required: "Debes completar con tu Nombre",
+                        minlength: "Tu nombre debe tener al menos 3 caracteres"
+                    },
+                    apellidos: {
+                        required: "Debes completar con tus Apellidos",
+                        minlength: "Tu apellido debe tener al menos 4 caracteres"
+                    }
+                    
+                }
+            });
+        });
+    </script>
+
+
 </head>
 <body>
 
@@ -16,40 +76,56 @@
       </div>
       <div class="row clearfix">
         <div class="">
-          <form action="login.html">
-            <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
-              <input type="email" name="email" placeholder="Correo Electronico" required />
+          <form id="form3" action="login.html">
+            <div class="input_field"> <span><i  class="fa fa-envelope"></i></span>
+              <input id= "email" type="email" name="email" placeholder="Correo Electronico" required />
             </div>
             <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
-              <input type="password" name="password" placeholder="Contraseña" required />
+              <input id="password1" type="password" name="password1" placeholder="Contraseña" required />
             </div>
             <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
-              <input type="password" name="password" placeholder="Repite tu Contraseña" required />
+              <input id="password2" type="password" name="password2" placeholder="Repite tu Contraseña" required />
             </div>
             <div class="row clearfix">
               <div class="col_half">
                 <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                  <input type="text" name="name" placeholder="Nombres" />
+                  <input id="name" type="text" name="name" placeholder="Nombres" required />
+                  <label id="name-error" class="error" for="name"></label>
                 </div>
               </div>
               <div class="col_half">
-                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                  <input type="text" name="name" placeholder="Apellidos" required />
+                <div class="input_field"> <span><i  class="fa fa-user"></i></span>
+                  <input id="apellidos" type="text" name="apellidos" placeholder="Apellidos" required />
                 </div>
               </div>
             </div>
               <div class="input_field checkbox_option">
-                <input type="checkbox" id="cb1">
+                <input  type="checkbox" id="cb1">
             <label for="cb1">Estoy de acuerdo con los terminos y condiciones.</label>
               </div>
               
-            <input class="button" type="submit" value="Registrarse" style="color: black;"/>
+            <input id= "registrarse" class="button" type="submit" value="Registrarse" style="color: black;"/>
           </form>
         </div>
       </div>
     </div>
     <p class="credit text-muted">Desarrollado por JR.ltda.</p>
   </div>
+
+  <script>
+
+    $(document).ready(function() {
+      $("#registrarse").on("click", function() {
+          var condiciones = $("#cb1").is(":checked");
+          if (!condiciones) {
+              alert("Debe aceptar las condiciones");
+              event.preventDefault();
+          }
+      });
+    });
+
+  </script>
+
 
 
 </body>

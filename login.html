@@ -9,7 +9,43 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
-</head>
+    
+    <!--Incluir la librería jQuery-->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <!--Incluir el plugin jQuery Validate-->
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+
+    <script>
+
+
+        $().ready(function() {
+            $("#form2").validate({
+                rules: {
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    password: {
+                        required: true,
+                        minlength: 8
+                    }
+                    
+                },
+                messages: {
+                    
+                    email: "Debes ingresar un email valido",
+                    password: {
+                        required: "Debes completar con tu contraseña",
+                        minlength: "Tu contraseña debe tener al menos 8 carácteres"
+                    },
+                    
+                }
+            });
+        });
+    </script>
+
+
+  </head>
 <body>
     <div class="form_wrapper">
         <div class="form_container">
@@ -18,11 +54,16 @@
           </div>
           <div class="row clearfix">
             <div class="">
-              <form action="index.html">
+              <form id="form2" action="index.html">
                 <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
-                  <input type="email" name="email" placeholder="Correo Electronico"  />
+                  <input type="email" name="email" placeholder="Correo Electronico" required/>
+
+                  
+
                 </div>
+
                 <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                  
                   <input type="password" name="password" placeholder="Contraseña"  />
                 </div>
                 <input class="button" type="submit" value="Entrar" style="color: black;"/>
@@ -33,6 +74,7 @@
         </div>
         <p class="credit text-muted">Desarrollado por JR.ltda.</p>
       </div>
+      
     
 </body>
 </html>

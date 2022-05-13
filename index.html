@@ -17,6 +17,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 
     <div id="pagina">
 
@@ -227,23 +229,26 @@
 
 
         <div id="suscribirse"
-            style="background-color: #F1E1A6;height: 150px; align-items: center; justify-content: center;">
-            <br>
-            <div id="texto_sub" class="text-center"
-                style="font-family: 'Abril Fatface';font-size: 1.1em; margin-left: 10px;">
-                ¡Suscribete a nuestra pagina web para recibir nueva Información y obtener un 5% de descuento en tus
-                siguientes compras!</div>
-            <br>
+        style="background-color: #F1E1A6;height: 150px; align-items: center; justify-content: center;">
+        <br>
+        <div id="texto_sub" class="text-center"
+            style="font-family: 'Abril Fatface';font-size: 1.1em; margin-left: 10px;">
+            ¡Suscribete a nuestra pagina web para recibir nueva Información y obtener un 5% de descuento en tus
+            siguientes compras!</div>
+        <br>
+        <form id="suscribirse" method="get" action="">
             <div id="mail" class="text-center" style=" align-items: center; display: flex; justify-content: center;">
-                <input type="text" placeholder="Ingresa tu correo electronico" style="height: 40px; width: 300px;border-radius: 10px 10px 10px 10px;
+                <input id="email_sub" type="text" placeholder="Ingresa tu correo electronico" style="height: 40px; width: 300px;border-radius: 10px 10px 10px 10px;
                 -moz-border-radius: 10px 10px 10px 10px;
                 -webkit-border-radius: 10px 10px 10px 10px;
-                border: 0px solid #000000;"><button class="btn btn-outline-success text-center" style="border-radius: 10px 10px 10px 10px;
+                border: 0px solid #000000;">
+                <button type="submit" class="btn btn-outline-success text-center" style="border-radius: 10px 10px 10px 10px;
                     -moz-border-radius: 10px 10px 10px 10px;
                     -webkit-border-radius: 10px 10px 10px 10px;
                     border: 1px solid green">Suscribirse</button>
             </div>
-        </div>
+        </form>
+    </div>
 
         <div class="" id="pie"
             style="display: flex; align-items: center; background-color: #97DBAE; height: 25rem; justify-content: space-between;">
@@ -277,6 +282,12 @@
         const links = document.querySelector('#links');
         bMore.addEventListener("click", (e) => {
             links.classList.toggle('collapsed');
+        });
+        $("#suscribirse").submit(function () {
+            if ($("#email_sub").val().indexOf('@', 0) == -1 || $("#email_sub").val().indexOf('.', 0) == -1) {
+                alert('El correo electrónico introducido no es correcto.');
+                event.preventDefault();
+             }
         });
     </script>
     

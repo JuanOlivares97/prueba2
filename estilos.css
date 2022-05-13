@@ -128,6 +128,26 @@ div.blueTable {
       grid-template-rows: 18rem 18rem ;
       margin-bottom: 150px;
     }
+    #crud_producto>#cont_inp{
+      flex-direction: column !important;
+      justify-content: flex-start !important;
+  
+    }
+    #crud_producto>#inp1{
+      margin: none !important;
+      margin: 5px;
+      padding: 5px;
+    }
+    #crud_producto1>#cont_inp{
+      flex-direction: column !important;
+      justify-content: flex-start !important;
+  
+    }
+    #crud_producto1>#inp1{
+      margin: none !important;
+      margin: 5px;
+      padding: 5px;
+    }
     
   }
   @media screen and (max-width: 720px) {
@@ -181,11 +201,22 @@ div.blueTable {
   #subtotal{
     display: none;
   }
-  #crud_producto{
+  #crud_producto>#cont_inp{
     flex-direction: column !important;
     justify-content: flex-start !important;
+
   }
   #crud_producto>#inp1{
+    margin: none !important;
+    margin: 5px;
+    padding: 5px;
+  }
+  #crud_producto1>#cont_inp{
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+
+  }
+  #crud_producto1>#inp1{
     margin: none !important;
     margin: 5px;
     padding: 5px;
@@ -196,3 +227,11 @@ div.blueTable {
   }
   }
   
+form .error {
+  color: #df1d09;
+  border: none;
+  display: block;
+
+  
+}
+
